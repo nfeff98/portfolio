@@ -1,20 +1,21 @@
 import { Link } from 'react-router-dom'
 import { Canvas } from '@react-three/fiber'
-import { Float, Text3D, Center } from '@react-three/drei'
+import { Float, Text, Center } from '@react-three/drei'
 
 function FloatingInitials() {
   return (
     <Float speed={1.4} rotationIntensity={0.4} floatIntensity={0.8}>
       <Center>
-        <Text3D
-          font="/fonts/inter_bold.json"
-          size={1.2}
-          height={0.15}
-          curveSegments={12}
+        <Text
+          fontSize={1.1}
+          color="#7c6ef5"
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={0.02}
+          outlineColor="#1a1a2e"
         >
           NF
-          <meshStandardMaterial color="#7c6ef5" metalness={0.6} roughness={0.2} />
-        </Text3D>
+        </Text>
       </Center>
     </Float>
   )

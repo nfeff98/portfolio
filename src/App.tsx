@@ -7,9 +7,12 @@ import Projects from '@/pages/Projects'
 import ProjectDetail from '@/pages/ProjectDetail'
 import Contact from '@/pages/Contact'
 
+const routerBasename =
+  import.meta.env.BASE_URL.replace(/\/$/, '') || undefined
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename}>
       <Background />
       <Nav />
       <Routes>

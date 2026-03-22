@@ -4,12 +4,13 @@
     <meta charset="utf-8" />
     <title>Redirecting…</title>
     <script>
-      // GitHub Pages SPA redirect hack.
-      // Encodes the full path into a query string so index.html can restore it.
+      // GitHub Pages SPA hack for project sites (username.github.io/<repo>/).
+      // Must match the repo name and your Vite base path (e.g. /portfolio/).
+      var REPO = 'portfolio';
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1).join('/') + '/?p=' +
+        '/' + REPO + '/?p=' +
         encodeURIComponent(l.pathname + l.search) + l.hash
       );
     </script>

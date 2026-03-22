@@ -31,6 +31,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
+          # Must match GitHub repo name for username.github.io/<repo>/ (see vite.config.ts, public/404.html)
+          VITE_BASE_PATH: /portfolio/
           VITE_CONTENT_REPO_OWNER: ${{ secrets.VITE_CONTENT_REPO_OWNER }}
           VITE_CONTENT_REPO_NAME:  ${{ secrets.VITE_CONTENT_REPO_NAME }}
           VITE_EMAILJS_SERVICE_ID:  ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
